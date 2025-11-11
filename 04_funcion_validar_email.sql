@@ -1,7 +1,7 @@
--- Ejercicio 2: Validar si un email contiene '@'
-CREATE OR REPLACE FUNCTION validar_email(email TEXT)
+
+CREATE OR REPLACE FUNCTION validar_correo(correo TEXT)
 RETURNS BOOLEAN AS $$
 BEGIN
-    RETURN email LIKE '%@%';
+    RETURN POSITION('@' IN correo) > 0;
 END;
 $$ LANGUAGE plpgsql;

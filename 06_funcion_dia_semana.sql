@@ -1,7 +1,6 @@
--- Devolver el día de la semana de una fecha
-CREATE OR REPLACE FUNCTION obtener_dia_semana(fecha_dada DATE)
+CREATE OR REPLACE FUNCTION obtener_dia_semana(fecha_input DATE)
 RETURNS TEXT AS $$
 BEGIN
-    RETURN to_char(fecha_dada, 'TMDay');
+    RETURN TO_CHAR(fecha_input, 'Day');
 END;
 $$ LANGUAGE plpgsql;

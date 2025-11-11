@@ -1,19 +1,22 @@
--- Datos para productos 
+-- Insertar productos
 INSERT INTO productos (nombre, precio, stock) VALUES
-('Laptop', 8500.00, 5),     
-('Monitor', 1999.99, 12),
-('Mouse', 150.00, 30),
-('Teclado', 299.99, 3);     
+('Laptop', 15000.00, 5),
+('Mouse', 250.00, 50),
+('Teclado', 450.00, 30),
+('Monitor', 3000.00, 8),
+('USB', 120.00, 100);
 
--- Datos para departamentos y empleados 
-INSERT INTO departamentos (id, nombre) VALUES
-(1, 'Ventas'),
-(2, 'TI'),
-(3, 'RRHH');
+-- Insertar departamentos
+INSERT INTO departamentos (nombre) VALUES
+('Ventas'),
+('Recursos Humanos'),
+('Tecnología');
 
-INSERT INTO empleados (nombre, departamento_id) VALUES
-('Ana', 1),
-('Luis', 2),
-('María', 2),
-('Carlos', 1),
-('Elena', 2);
+-- Insertar empleados
+INSERT INTO empleados (nombre, id_departamento) VALUES
+('Carlos Gómez', 1),
+('Ana López', 2),
+('Luis Hernández', 1),
+('María Torres', 3),
+('Javier Ruiz', 3),
+('Fernanda Díaz', 1);

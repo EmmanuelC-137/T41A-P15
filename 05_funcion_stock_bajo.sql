@@ -1,17 +1,9 @@
--- Ejercicio 3: Devolver productos con stock bajo
-CREATE OR REPLACE FUNCTION obtener_productos_stock_bajo(
-    cantidad_minima INT
-)
-RETURNS TABLE(
-    id_producto INT,
-    nombre_producto TEXT,
-    stock_actual INT
-) AS $$
+CREATE OR REPLACE FUNCTION productos_bajo_stock(minimo INT)
+RETURNS TABLE(id INT, nombre VARCHAR, stock INT) AS $$
 BEGIN
-    -- Devuelve todas las filas que coinciden con la consulta
     RETURN QUERY
-    SELECT id, nombre, stock
-    FROM productos
-    WHERE stock < cantidad_minima;
+    SELECT p.id, p.nombre, p.stock
+    FROM productos p
+    WHERE p.stock < minimo;
 END;
 $$ LANGUAGE plpgsql;
